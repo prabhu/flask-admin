@@ -30,8 +30,7 @@ jobs:
         ${GITHUB_WORKSPACE}/sl analyze --app flask-admin \
           --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} \
           --python --cpg --beta . \
-          -- -l debug --ignore-paths ./flask_admin/contrib \
-          --ignore-paths doc --ignore-paths examples
+          -- -l debug --ignore-paths ./flask_admin/contrib doc examples
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
 
